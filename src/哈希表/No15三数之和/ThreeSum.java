@@ -41,6 +41,7 @@ public class ThreeSum {
                 } else if (sum < 0) {
                     left++;
                 } else {
+                    // 找到一种答案添加到结果集
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
                     // 去重
                     while (right > left && nums[right] == nums[right - 1]) right--;
