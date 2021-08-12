@@ -34,7 +34,7 @@ public class FourSum {
                         // 去重
                         while (left < right && nums[right] == nums[right - 1]) right--;
                         while (left < right && nums[left + 1] == nums[left]) left++;
-                        // 找到后左右指针各搜索一下
+                        // 找到后左右指针各收缩一下
                         right--;
                         left++;
                     }
