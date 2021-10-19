@@ -1,14 +1,18 @@
+package 二叉树.No107二叉树的层序遍历II;
+
 import 二叉树.TreeNode;
 
-import java.rmi.Remote;
 import java.util.*;
 
-public class Test {
+public class LevelOrderBottom {
 
     List<List<Integer>> resultList = new ArrayList<>();
 
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         Deque<TreeNode> queue = new ArrayDeque<>();
+        if (root == null) {
+            return resultList;
+        }
         queue.add(root);
         while (!queue.isEmpty()) {
             int len = queue.size();
@@ -26,13 +30,9 @@ public class Test {
             }
             resultList.add(itemList);
         }
+        // 前面和普通的层序遍历一样，最后反转一下即可
         Collections.reverse(resultList);
         return resultList;
     }
-
-    public static void main(String[] args) {
-        Test test = new Test();
-    }
-
 
 }
