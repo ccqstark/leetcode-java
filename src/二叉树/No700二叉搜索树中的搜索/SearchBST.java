@@ -9,6 +9,7 @@ import 二叉树.TreeNode;
  */
 public class SearchBST {
 
+    // 递归法
     public TreeNode searchBST(TreeNode root, int val) {
         // 节点为空或者找到了目标值
         if (root == null || root.val == val) {
@@ -25,4 +26,17 @@ public class SearchBST {
 
         return null;
     }
+
+    // 迭代法
+    public TreeNode searchBST2(TreeNode root, int val) {
+        while (root != null) {
+            if (val < root.val) {
+                root = root.left;
+            } else if (val > root.val) {
+                root = root.right;
+            } else return root;
+        }
+        return null;
+    }
+
 }
