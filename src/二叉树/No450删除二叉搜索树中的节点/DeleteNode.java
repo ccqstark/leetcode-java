@@ -94,6 +94,9 @@ public class DeleteNode {
         return realRoot;
     }
 
+    /**
+     * 最优解，交换节点方式
+     */
     public TreeNode deleteNode2(TreeNode root, int key) {
 
         if (root == null) {
