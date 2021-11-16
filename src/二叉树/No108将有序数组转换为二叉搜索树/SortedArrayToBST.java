@@ -12,8 +12,8 @@ public class SortedArrayToBST {
         if (left > right ){
             return null;
         }
-        // 取中间就可以保证构造出来的树平衡
-        // 取当前区间的中间节点作为当前root,这样写是为了防止超出数值范围（原来那种(left+right)/2会有这个问题）
+        // 取中间进行分割就可以保证构造出来的树平衡
+        // 取当前区间的中间节点作为当前root,下面这种写法是为了防止超出数值范围（原来那种(left+right)/2会有这个问题）
         int mid = left + ((right - left) / 2);
         TreeNode root = new TreeNode(nums[mid]);
         // 左右子树递归，范围都是左闭右闭
