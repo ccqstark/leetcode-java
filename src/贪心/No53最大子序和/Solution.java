@@ -8,7 +8,7 @@ public class Solution {
 
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
-            // 更新最大值
+            // 更新最大值，注意这步一定要比下面那一步先，以防最后答案就是个负数，却输出0
             if (sum > result){
                 result = sum;
             }
