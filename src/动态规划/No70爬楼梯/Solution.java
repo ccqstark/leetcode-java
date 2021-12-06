@@ -12,14 +12,14 @@ public class Solution {
             return n;
         }
         // stairs[i]表示爬到第i层有多少种方法，因此i等于0时没有任何意义！
-        int[] stairs = new int[n + 1];
-        stairs[1] = 1;
-        stairs[2] = 2;
+        int[] dp = new int[n + 1];
+        dp[1] = 1;
+        dp[2] = 2;
         for (int i = 3; i <= n; i++) {
-            stairs[i] = stairs[i - 1] + stairs[i - 2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
 
-        return stairs[n];
+        return dp[n];
     }
 
     // 空间优化
@@ -27,16 +27,16 @@ public class Solution {
         if (n == 1 || n == 2) {
             return n;
         }
-        int[] stairs = new int[3];
-        stairs[1] = 1;
-        stairs[2] = 2;
+        int[] dp = new int[3];
+        dp[1] = 1;
+        dp[2] = 2;
         for (int i = 3; i <= n; i++) {
-            int sum = stairs[1] + stairs[2];
-            stairs[1] = stairs[2];
-            stairs[2] = sum;
+            int sum = dp[1] + dp[2];
+            dp[1] = dp[2];
+            dp[2] = sum;
         }
 
-        return stairs[2];
+        return dp[2];
     }
 
 }
