@@ -1,8 +1,14 @@
 package 动态规划.No474一和零;
 
+/**
+ * @author ccqstark
+ * @description 这题相当于重量有两个维度的01背包，物品就是这些字符串，背包容量就是m和n，重量的两个维度就分别是0和1的数量
+ * @date 2021/12/23 20:37 
+ */
 public class Solution {
     public int findMaxForm(String[] strs, int m, int n) {
 
+        // dp[i][j]的意思是：在子集有i个0和j个1的情况下，子集的最大长度为dp[i][j]
         int[][] dp = new int[m + 1][n + 1];
 
         // 遍历字符串数组
