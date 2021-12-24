@@ -39,4 +39,22 @@ public class Solution {
         return dp[2];
     }
 
+    /**
+     * 这是本题的dp解法，其实就是完全背包+求排列数，基本和No377组合总和IV是一样的
+     */
+    public int climbStairsDP(int n) {
+        int[] dp = new int[n + 1];
+        dp[0] = 1;
+        for (int i = 0; i <= n; i++) {
+            // 这里的2是题目说的一次最多爬2格，如果改为m，题目就变成一次可以爬1-m格楼梯，变成一道新的题目
+            for (int j = 1; j <= 2; j++) {
+                if (i >= j) {
+                    dp[i] += dp[i - j];
+                }
+            }
+        }
+
+        return dp[n];
+    }
+
 }
