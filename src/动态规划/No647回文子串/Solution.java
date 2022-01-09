@@ -3,13 +3,14 @@ package 动态规划.No647回文子串;
 public class Solution {
     public int countSubstrings(String s) {
 
-        // dp[i][j]表示下标为i到j的字符串是否为回文串
+        // dp[i][j]表示下标为i到j的字符串是否为回文串（左闭右闭）
         boolean[][] dp = new boolean[s.length()][s.length()];
         // 表示回文子串的数量
         int result = 0;
 
         // 因为下面用到了dp[i + 1][j - 1]，也就是"去头去尾"了，所以要从下到上，从左到右遍历
         for (int i = s.length() - 1; i >= 0; i--) {
+            // 因为j一定是大于i的，所以j的初始值为i
             for (int j = i; j < s.length(); j++) {
                 // 首尾不一致时dp一定为false，因为初始化就为false所以这里就省略了
                 // 首尾一致时
