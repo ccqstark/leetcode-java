@@ -1,29 +1,30 @@
-package 综合.No912排序数组;
+package 数组.No215数组中的第K个最大元素;
 
 import java.util.Random;
 
-public class QuickSort {
-
-    public int[] sortArray(int[] nums) {
-        quickSort(nums, 0, nums.length - 1);
-        return nums;
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        // 第k大的数，在数组中的下标是nums.length - k
+        // 长度为1的数组不用特判，同样适用
+        return quickSelect(nums, 0, nums.length - 1, nums.length - k);
     }
 
-    // 快排
-    public void quickSort(int[] nums, int l, int r) {
-        if (l < r) {
-            // partition拿到划分后数组的分界
-            int pos = partition(nums, l, r);
-            // 对左边继续递归
-            quickSort(nums, l, pos - 1);
-            // 对右边继续递归
-            quickSort(nums, pos + 1, r);
+    // 基于快排的快速选择，找出nums数组在从小到大排序后下标为n的元素
+    public int quickSelect(int[] nums, int l, int r, int n) {
+        // partition拿到划分后数组的分界
+        int pos = partition(nums, l, r);
+        // 如果刚好找到对应位置就直接返回
+        if (pos == n) {
+            return nums[n];
+        } else {
+            // pos略大就找左边，pos略小就找右边
+            return pos > n ? quickSelect(nums, l, pos - 1, n) : quickSelect(nums, pos + 1, r, n);
         }
     }
 
-    // 核心方法
+    // 快排的核心方法和原来的一模一样
     public int partition(int[] nums, int l, int r) {
-        // 随机拿到一个分界值(nextInt方法是获取0到n之前的随机整数，但是开区间不包括n)
+        // 随机拿到一个分界值
         int pivot_index = new Random().nextInt(r - l + 1) + l;
         int pivot = nums[pivot_index];
         // 把分界值对应的数和最后一个交换位置，将其放在最右边
@@ -54,6 +55,3 @@ public class QuickSort {
     }
 
 }
-
-
-
