@@ -24,15 +24,15 @@ public class Solution {
 
     // 非递归法
     public int search2(int[] nums, int target) {
-        int l = 0, r = nums.length-1;
-        while (l<=r){
-            int mid = (r-l) / 2 + l;
+        int l = 0, r = nums.length - 1;
+        while (l <= r) {
+            int mid = (r - l) / 2 + l;
             if (nums[mid] == target) {
                 return mid;
             }
-            if (target < nums[mid]){
+            if (target < nums[mid]) {
                 r = mid - 1;
-            }else {
+            } else {
                 l = mid + 1;
             }
         }
