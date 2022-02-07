@@ -37,7 +37,7 @@ public class GetIntersectionNode {
     /**
      * 法2：由于交叉点后面的节点序列都是完全相同的，所以先算出两表的长度
      * 再算出长度差n，移动那个长度较大的链表的指针n位使得两表末尾对齐
-     * 对齐后两指针同步像后移动就可以到达交叉点了
+     * 对齐后两指针同步向后移动就可以到达交叉点了
      */
     public ListNode getIntersectionNode2(ListNode headA, ListNode headB) {
         // 计算两表的长度
