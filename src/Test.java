@@ -21,10 +21,10 @@ public class Test {
         // for (int i = 0; i < index; i++) {
         //     nums[i] = _nums[i];
         // }
-        int[] nums = new int[] {
-                3,4,5,1,2
-        };
-        System.out.println();
+
+        String s = "";
+        s = (8+'0') + s;
+        System.out.println(s);
     }
 
 }
