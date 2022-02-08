@@ -1,21 +1,6 @@
 package 链表.No234回文链表;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
+import 链表.ListNode;
 
 /**
  * 下面的快慢指针+反转链表的时间复杂度是O(N),空间复杂度是O(1)

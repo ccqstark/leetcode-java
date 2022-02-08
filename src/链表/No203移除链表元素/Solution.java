@@ -1,23 +1,8 @@
 package 链表.No203移除链表元素;
 
-class ListNode {
-    int val;
-    ListNode next;
+import 链表.ListNode;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-public class RemoveElements {
+public class Solution {
 
     // 原链表操作
     public ListNode removeElements1(ListNode head, int val) {

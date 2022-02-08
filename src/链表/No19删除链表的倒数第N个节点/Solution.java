@@ -1,23 +1,8 @@
 package 链表.No19删除链表的倒数第N个节点;
 
-class ListNode {
-    int val;
-   ListNode next;
+import 链表.ListNode;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-public class RemoveNthFromEnd {
+public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         // 空链表 / 只有一个节点的情况
         if (head == null || (head.next == null && n == 1)) {

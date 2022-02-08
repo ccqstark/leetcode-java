@@ -1,23 +1,8 @@
 package 链表.No24两两交换链表中的节点;
 
-class ListNode {
-    int val;
-    ListNode next;
+import 链表.ListNode;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-public class SwapPairs {
+public class Solution {
     public ListNode swapPairs(ListNode head) {
         // 空链表 / 只有一个节点
         if (head == null || head.next == null) {

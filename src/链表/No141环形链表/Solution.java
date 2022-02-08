@@ -1,16 +1,8 @@
 package 链表.No141环形链表;
 
+import 链表.ListNode;
+
 import java.util.HashSet;
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
-}
 
 public class Solution {
     /**

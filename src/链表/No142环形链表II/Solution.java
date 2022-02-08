@@ -1,25 +1,10 @@
 package 链表.No142环形链表II;
 
+import 链表.ListNode;
+
 import java.util.HashSet;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-public class DetectCycle {
+public class Solution {
     // 法1： 快慢指针
     public ListNode detectCycle1(ListNode head) {
         ListNode fast = head;

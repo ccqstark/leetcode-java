@@ -1,23 +1,8 @@
 package 链表.面试题0207链表相交;
 
-class ListNode {
-    int val;
-    ListNode next;
+import 链表.ListNode;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-}
-
-public class GetIntersectionNode {
+public class Solution {
     /**
      * 法1：设链表A的长度为a，B的长度为b，两表从头节点到交叉节点的距离分别为c和d
      * 由于交叉的节点是引用的节点，所以两链表从交叉节点开始后面全部的节点都是一样的，长度肯定也是一样的
