@@ -2,7 +2,28 @@ package 数组.No59螺旋矩阵II;
 
 public class GenerateMatrix {
 
-    public int[][] generateMatrix(int n) {
+    // 推荐：由螺旋矩阵I演变而来的更好懂版本，也就是上下左右收缩边界法
+    public int[][] generateMatrix1(int n) {
+        int cnt = 1;
+        int[][] matrix = new int[n][n];
+        int up = 0;
+        int down = matrix.length - 1;
+        int left = 0;
+        int right = matrix[0].length - 1;
+        while (true) {
+            for (int i = left; i <= right; i++) matrix[up][i] = cnt++;
+            if (++up > down) break;
+            for (int i = up; i <= down; i++) matrix[i][right] = cnt++;
+            if (--right < left) break;
+            for (int i = right; i >= left; i--) matrix[down][i] = cnt++;
+            if (--down < up) break;
+            for (int i = down; i >= up; i--) matrix[i][left] = cnt++;
+            if (++left > right) break;
+        }
+        return matrix;
+    }
+
+    public int[][] generateMatrix2(int n) {
         // 矩阵本体
         int[][] matrix = new int[n][n];
         // 横行和纵向开始填充的起始点
