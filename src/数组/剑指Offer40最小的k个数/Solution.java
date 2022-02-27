@@ -9,7 +9,7 @@ import java.util.Queue;
  */
 public class Solution {
 
-    // 法1：大根堆
+    // 法1：大根堆，时间复杂度O(NlogK)
     public int[] getLeastNumbers(int[] arr, int k) {
 
         if (arr.length == 0 || k == 0) {
@@ -35,7 +35,8 @@ public class Solution {
         return res;
     }
 
-    // 法2：快排变种
+    // 法2：快排变种，时间复杂带O(N)
+
 
 
 }
