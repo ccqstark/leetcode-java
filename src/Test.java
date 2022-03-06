@@ -1,30 +1,32 @@
-import com.sun.media.sound.SoftTuning;
-import 二叉树.TreeNode;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Test {
 
-    public static void main(String[] args) {
-        // Scanner in = new Scanner(System.in);
-        // int index = 0;
-        // int[] _nums = new int[1000000];
-        // // 注意 hasNext 和 hasNextLine 的区别
-        // while (in.hasNextInt()) { // 注意 while 处理多个 case
-        //     int a = in.nextInt();
-        //     _nums[index] = a;
-        //     index++;
-        // }
-        // int[] nums = new int[index];
-        // for (int i = 0; i < index; i++) {
-        //     nums[i] = _nums[i];
-        // }
-
-        String s = "";
-        s = (8+'0') + s;
-        System.out.println(s);
+    static void solution(String str) {
+        int cnt = 0;
+        boolean loop = true;
+        int start = 0;
+        while (loop) {
+            for (int i = start; i < str.length() - 1; i++) {
+                int j = i + 1;
+                if (str.charAt(i) == 'a' && str.charAt(j) == 'b') {
+                    str = str.substring(0, i) + "bba" + str.substring(j + 1);
+                    cnt++;
+                    start = i + 2;
+                    System.out.println(str);
+                    break;
+                }
+                if (j == str.length() - 1) {
+                    System.out.println(cnt);
+                    loop = false;
+                }
+            }
+        }
     }
 
+    public static void main(String[] args) {
+        // Scanner sc = new Scanner(System.in);
+        // String str = sc.next();
+        solution("aab");
+    }
 }
